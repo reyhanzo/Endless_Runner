@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
+    GameOverMenu gameOverMenu;
     bool alive = true;
 
     public float speed = 5;
@@ -34,11 +35,8 @@ public class PlayerMovement : MonoBehaviour {
     {
         alive = false;
         // Restart the game
-        Invoke("Restart", 2);
+		gameOverMenu.Show();
     }
 
-    void Restart ()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+
 }
