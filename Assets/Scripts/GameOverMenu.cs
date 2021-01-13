@@ -7,27 +7,15 @@ public class GameOverMenu : MonoBehaviour {
 
 	[SerializeField] private Text text;
 
-	private void Start() {
-		Hide();
-	}
-
-	public void Show() {
-		gameObject.SetActive(true);
-	}
-
 	public void Retry() {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 	}
 
 	public void MainMenu() {
-		SceneManager.LoadScene("Main Menu");
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
 	}
 
 	public void SetScore(int score) {
 		text.text = "SCORE : " + score;
-	}
-
-	public void Hide() {
-		gameObject.SetActive(false);
 	}
 }

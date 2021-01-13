@@ -34,8 +34,7 @@ public class PlayerMovement : MonoBehaviour {
     public void Die ()
     {
         alive = false;
-        // Restart the game
-		gameOverMenu.Show();
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 
